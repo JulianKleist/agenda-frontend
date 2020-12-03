@@ -1,0 +1,34 @@
+<aside class="left-sidebar">
+
+    <div class="scroll-sidebar">
+
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="user-profile">
+                    <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><img src="./assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs </span></a>
+                    
+                </li>
+                <li class="nav-devider"></li>
+                <li class="nav-small-cap">PERSONAL</li>
+
+                <li *ngFor="let item of menuItems"> 
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i [class]="item.icono"></i>
+                        <span class="hide-menu"> {{ item.titulo }} 
+                            <span class="label label-rouded label-themecolor pull-right">{{ item.submenu.length }}</span>
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li *ngFor="let subItem of item.submenu">
+                            <a [routerLink]="subItem.url"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">{{ subItem.titulo }}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</aside>
